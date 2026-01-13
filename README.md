@@ -12,7 +12,7 @@ A full-stack social networking web application designed for gamers to connect an
  Backend
 - Node.js
 - Express.js
-- MySQL
+- MySQL2
 
 Other
 - Authentication & authorization
