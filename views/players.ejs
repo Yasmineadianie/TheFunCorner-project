@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jugadores</title>
+
+    <%- include('modules/linksHead') %>
+
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+  </head>
+
+  <body>
+    <%- include('modules/header.ejs') %>
+
+    <main>
+      <article class="position-relative text-center overflow-visible p-3">
+        <h2 class="text-center py-5 fw-bold">Discover our amazing players.</h2>
+        <div class="d-flex flex-wrap gap-5 justify-content-center">
+          <% data.forEach((elem)=>{ %>
+
+          <div class="card" style="width: 18rem">
+            <img
+              src="/images/players/<%= elem.player_img?elem.player_img:'avatarDefault.jpg' %>"
+              class="card-img-top"
+            />
+            <div class="card-body text-white fw-bold">
+              <h5 class="card-title"><%= elem.name %> <%= elem.last_name %></h5>
+              <p class="card-text">Email: <%= elem.email %></p>
+              <p class="card-text">Preferences: <%= elem.preferences %></p>
+
+              <div class="justify-content-between d-block">
+                <a
+                  href="/players/unPlayer/<%= elem.player_id %>"
+                  class="btn btn-a btn-secondary join1"
+                  >See more from <%= elem.name %></a
+                >
+                <a
+                  href="/players/delTotal/<%= elem.player_id %>"
+                  class="btn text-danger join1"
+                  >Delete permanently</a
+                >
+                <a
+                  href="/players/delLogic/<%= elem.player_id %>"
+                  class="btn text-warning join1"
+                  >Deactivate</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <% }) %>
+        </div>
+      </article>
+    </main>
+
+    <%- include("modules/footer") %>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>login</title>
+
+    <%- include('modules/linksHead') %>
+
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+  </head>
+
+  <body>
+    <%- include('modules/header.ejs') %>
+
+    <main class="login">
+      <div class="d-flex justify-content-center py-5">
+        <form
+          class="w-25 bg-secondary border border-dark-subtle border-2 rounded-4 p-4"
+          action="/players/login"
+          method="post"
+        >
+          <h2 class="text-center">Sign in</h2>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" name="email" />
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="text"
+              class="form-control"
+              id="password"
+              name="password"
+            />
+          </div>
+
+          <p class="text-danger"><%= message %></p>
+
+          <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <button type="submit" class="btn btn-secondary join1">
+              Accept
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary join1"
+              onclick="history.go(-1)"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <%- include("modules/footer") %>
+  </body>
+</html>

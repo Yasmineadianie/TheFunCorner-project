@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Player Information</title>
+
+    <%- include('modules/linksHead') %>
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+  </head>
+
+  <body>
+    <%- include('modules/header.ejs') %>
+    <main>
+      <section class="section-unplayer p-3">
+        <h2 class="text-center fw-bold">Player Information</h2>
+
+        <div class="row g-0 d-flex gap-2 justify-content-center py-5">
+          <div
+            class="card card-info col-md-8 justify-content-center"
+            style="width: 18rem"
+          >
+            <img
+              src="/images/players/<%= player.player_img?player.player_img:'avatarDefault.jpg' %>"
+              alt=""
+            />
+          </div>
+
+          <div class="card card-info col-md-4">
+            <h3>Name: <%= player.name %></h3>
+
+            <h3>last_name: <%= player.last_name %></h3>
+
+            <h3>Email: <%= player.email %></h3>
+
+            <h3>Preferences: <%= player.preferences %></h3>
+
+            <div class="d-flex gap-3">
+              <a
+                class="btn btn-secondary join1"
+                href="/players/editPlayer/<%= player.player_id %>"
+                >Edit player</a
+              >
+              <br />
+              <a class="btn btn-secondary join1" href="/players">Go Back</a>
+              <a
+                class="btn btn-warning join1"
+                href="/games/openFormAddGame/<%= player.player_id %>"
+                >Add Game</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-3 section-unplayer">
+        <h3 class="text-center fw-bold">Player Game Library</h3>
+        <div class="d-flex flex-wrap gap-3 justify-content-center py-2">
+          <% games.forEach((elem)=>{ %>
+
+          <div class="card mb-3" style="max-width: 540px">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="/images/games/<%= elem.game_img %>"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%= elem.title %></h5>
+                  <p class="card-text">Review: <%= elem.review %></p>
+                  <p class="card-text">Starrating: <%= elem.starrating %></p>
+                  <p class="card-text">Platform: <%= elem.platform %></p>
+                  <p class="card-text">
+                    Year release: <%= elem.year_release %>
+                  </p>
+
+                  <div class="d-flex gap-3">
+                    <a
+                      class="btn btn-secondary join1"
+                      href="/games/editGame/<%= elem.game_id %>"
+                      >Edit game</a
+                    >
+                    <a
+                      class="btn text-warning join1"
+                      href="/games/deactivateGame/<%= elem.game_id %>/<%= player.player_id %>"
+                      >Deactivate</a
+                    >
+                    <a
+                      class="btn text-danger join1"
+                      href="/games/delGame/<%= elem.game_id %>/<%= player.player_id %>"
+                      >Delete permanently</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <% }) %>
+        </div>
+      </section>
+    </main>
+
+    <%- include("modules/footer") %>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Index</title>
+
+    <%- include('modules/linksHead') %>
+
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+  </head>
+
+  <body>
+    <%- include('modules/header.ejs') %>
+
+    <main>
+      <h2>Game Submission Form</h2>
+
+      <div class="d-flex justify-content-center">
+        <form
+          class="w-25 border border-primary border-4 rounded-bottom-5 p-4"
+          action="/games/addGame/<%= player_id %>"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label for="title" class="form-label">Game name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              aria-describedby="gameHelp"
+              name="title"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="review" class="form-label">Review</label>
+            <input type="text" class="form-control" id="review" name="review" />
+          </div>
+
+          <div class="mb-3">
+            <label for="starrating" class="form-label">Starrating</label>
+            <input
+              type="number"
+              class="form-control"
+              id="starrating"
+              name="starrating"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="platform" class="form-label">Platform</label>
+            <input
+              type="text"
+              class="form-control"
+              id="platform"
+              name="platform"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="year_release" class="form-label">Year release</label>
+            <input
+              type="datetime"
+              class="form-control"
+              id="year_release"
+              name="year_release"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="game_img" class="form-label">Add image</label>
+            <input
+              hidden
+              type="file"
+              class="form-control"
+              id="game_img"
+              name="img"
+            />
+          </div>
+
+          <p class="text-danger"><%= message %></p>
+
+          <button type="submit" class="btn btn-primary">Accept</button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="history.go(-1)"
+          >
+            Cancel
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <%- include("modules/footer") %>
+  </body>
+</html>

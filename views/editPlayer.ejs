@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>edition</title>
+
+    <%- include('modules/linksHead') %>
+
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+  </head>
+
+  <body>
+    <%- include('modules/header.ejs') %>
+
+    <main>
+      <h2 class="text-center py-5 fw-bold">Edit Player Profile</h2>
+
+      <div class="d-flex justify-content-center">
+        <form
+          class="w-25 border border-dark-subtle border-4 rounded-bottom-5 p-4"
+          action="/players/editPlayer/<%= playerToEdit.player_id %>"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label for="name" class="form-label">Player name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              value="<%= playerToEdit.name %>"
+              aria-describedby="emailHelp"
+              name="name"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="last_name" class="form-label">last_name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="last_name"
+              value="<%= playerToEdit.last_name %>"
+              name="last_name"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="player_img">
+              <i class="fa-solid fs-1 fa-cloud-arrow-up"></i>
+            </label>
+            <input
+              type="file"
+              class="form-control"
+              id="player_img"
+              name="img"
+            />
+          </div>
+
+          <p class="text-danger">
+            <%= typeof message != 'undefined'? message : null %>
+          </p>
+
+          <div class="d-flex gap-3">
+            <button type="submit" class="btn btn-secondary join1">
+              Accept
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary join1"
+              onclick="history.go(-1)"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <%- include("modules/footer") %>
+  </body>
+</html>

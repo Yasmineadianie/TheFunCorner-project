@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Index</title>
+
+    <%- include('modules/linksHead') %>
+
+    <link rel="stylesheet" href="stylesheets/Index.css" />
+  </head>
+
+  <body>
+    <%- include('modules/header.ejs') %>
+
+    <main>
+      <section class="section-1 p-3">
+        <div
+          class="container-fluid position-absolute text-center overflow-visible"
+        >
+          <h1 class="text-center py-5 fw-bold">
+            Welcome to your Fun Corner univers.
+          </h1>
+          <p class="fw-bold">
+            Sign up now and start sharing your best games with others players.
+          </p>
+          <div>
+            <a href="/players/register" class="btn join btn-outline-light"
+              >Join Us</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="container-xxl py-2">
+        <h2 class="text-center py-3 fw-bold">
+          Some of our different games categories
+        </h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img src="/images/players/pokerjpg.jpg" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title text-center">Strategy games</h5>
+                <a
+                  href="/players"
+                  class="btn join1 btn-outline-light text-center"
+                  >Discover</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="/images/players/pss.jpg" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title text-center">Action games</h5>
+                <a
+                  href="/players"
+                  class="btn join1 btn-outline-light text-center"
+                  >Discover</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="/images/players/pzz.jpg" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title text-center">brain games</h5>
+
+                <div>
+                  <a
+                    href="/players"
+                    class="btn join1 btn-outline-light text-center"
+                    >Discover</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-center py-4 fw-bold">Some of our Players Reviews</h2>
+        <div id="carouselExampleCaptions" class="carousel slide">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/images/players/beau.jpg" class="d-block" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Joe Colins</h5>
+                <p>"I really had a fun with others players"</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/images/players/player1.jpg"
+                class="d-block"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Ana Lopez</h5>
+                <p>"I definitely recommend this web, fun for sure!"</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="/images/players/hm.jpg" class="d-block" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Pacheco Gaspar</h5>
+                <p>"do you wanna test your mind? get join this community!"</p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-center fw-bold py-4 fst-italic">
+          Your opinion matters!
+        </h2>
+        <div class="container-xxl justify-content-center py-5 d-flex">
+          <form
+            class="w-25 border border-dark-subtle border-4 rounded-bottom-5 p-4 py-5 justify-content-center"
+          >
+            <div class="mb-3">
+              <label for="last_name" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="last_name"
+                name="last_name"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="text" class="form-control" id="email" name="email" />
+            </div>
+
+            <div class="mb-3 d-flex">
+              <label for="comment" class="form-label">Comment</label>
+              <br />
+              <textarea name="comment" id=""></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="preferences" class="form-label"
+                >Platform preferences</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="preferences"
+                name="preferences"
+              />
+            </div>
+
+            <div class="d-flex flex-wrap gap-3 justify-content-center">
+              <button type="submit" class="btn btn-secondary join1">
+                submit
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary join1"
+                onclick="history.go(-1)"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <%- include("modules/footer") %>
+  </body>
+</html>

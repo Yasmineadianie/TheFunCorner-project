@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Index</title>
+
+    <%- include('modules/linksHead') %>
+
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+  </head>
+
+  <body>
+    <%- include('modules/header.ejs') %>
+
+    <main class="register">
+      <h2 class="text-center py-5">Register Form</h2>
+
+      <div class="d-flex justify-content-center">
+        <form
+          class="w-25 border bg-secondary border-dark-subtle border-4 rounded-bottom-5 p-4 py-5"
+          action="/players/register"
+          method="post"
+        >
+          <div class="mb-3">
+            <label for="name" class="form-label">Player name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              aria-describedby="emailHelp"
+              name="name"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="last_name" class="form-label">last_name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="last_name"
+              name="last_name"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" name="email" />
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="text"
+              class="form-control"
+              id="password"
+              name="password"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="preferences" class="form-label"
+              >Platform preferences</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="preferences"
+              name="preferences"
+            />
+          </div>
+
+          <p class="text-danger"><%= message %></p>
+
+          <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <button type="submit" class="btn btn-secondary join1">
+              Accept
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary join1"
+              onclick="history.go(-1)"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <%- include("modules/footer") %>
+  </body>
+</html>
