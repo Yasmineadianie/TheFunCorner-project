@@ -25,3 +25,5 @@ Other
 1. Clone the repository
 -bash
 git clone https://github.com/Yasmineadianie/TheFunCorner-project.git
+
+Video Walkthrough: https://youtu.be/1il5BMUOyug?si=d9JNwnrMV3QP7XDF
